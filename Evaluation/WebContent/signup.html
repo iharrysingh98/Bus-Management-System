@@ -1,0 +1,325 @@
+
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Sign Up</title>
+<link rel="stylesheet" href="css/style.css">
+<script>  
+function validateform(){  
+var name=document.myform.name.value;  
+var password=document.myform.password.value;  
+var email=document.myform.email.value;
+var phone=document.myform.phone.value;
+
+if (name==null || name=="")
+{  
+  alert("Name can't be blank");  
+  return false;  
+}
+else if(password.length<6)
+{  
+  alert("Password must be at least 6 characters long.");  
+  return false;  
+  }  
+  
+else if(email==null || email=="")
+	{
+	alert("Email can't be null");
+	return false;
+	}
+else if(phone.length<10)
+	{
+	alert("phone number must be of 10 digits")
+	}
+}  
+</script>  
+
+<style>
+
+.car-body{
+            width: 400px;
+            height: 150px;
+            background:  #ffe438;
+            margin: 100px 0;
+            position: absolute;
+            z-index: 1;
+            border-radius: 15px 15px 0 0;
+            animation: run 5s cubic-bezier(.59,.15,.59,1.06);
+            animation-iteration-count: infinite;
+            animation-direction: alternate-reverse;
+        }
+        .car-f-wheel,.car-b-wheel {
+            position: absolute;
+            height: 80px;
+            width: 80px;
+            border-radius: 50%;
+            display: block;
+            background: #FFF none repeat scroll 0% 0%;
+            z-index: 2;
+            bottom: -50px;
+           
+        }
+        .car-f-wheel {
+            left: 50px;
+            box-sizing: border-box;
+        }
+        .car-f-wheel:after {
+            position: absolute;
+            content: '';
+            display: block;
+            top: 8px;
+            left: 8px;
+            right: 8px;
+            bottom: 8px;
+            background: #D8C535;
+            z-index: 3;
+            border-radius: 50%;
+            border: 8px solid #000;
+        }
+
+        .car-f-wheel:before {
+            position: absolute;
+            content: '';
+            display: block;
+            top: 30px;
+            left: 30px;
+            right: 30px;
+            bottom: 30px;
+            background: #000;
+            z-index: 4;
+            border-radius: 50%;
+        }
+
+        .car-b-wheel {
+            right: 28px;
+        }
+
+        .car-b-wheel:after{
+            position: absolute;
+            content: '';
+            display: block;
+            top: 8px;
+            left: 8px;
+            right: 8px;
+            bottom: 8px;
+            background: #D8C535;
+            z-index: 3;
+            border-radius: 50%;
+            border: 8px solid #000;
+        }
+
+        .car-b-wheel:before {
+            position: absolute;
+            content: '';
+            display: block;
+            top: 30px;
+            left: 30px;
+            right: 30px;
+            bottom: 30px;
+            background: #000;
+            z-index: 4;
+            border-radius: 50%;
+        }
+        .car-doors {
+            position: absolute;
+            height: 120px;
+            top: 30px;
+            left: 10px;
+            background: #C0C0C0;
+            width: 35px;
+            border-radius: 3px 0 0 0
+        }
+
+        .car-doors:after {
+            width: 12px;
+            background: #838383;
+            top: 5px;
+            right: 4px;
+            bottom: 10px;
+            content: "";
+            display: block;
+            height: 115px;
+            position: absolute;
+        }
+
+        .car-doors:before {
+            width: 12px;
+            background: #838383;
+            top: 5px;
+            left: 4px;
+            bottom: 10px;
+            content: "";
+            display: block;
+            height: 115px;
+            position: absolute;
+            border-radius: 3px 0 0 0
+        }
+
+        .car-windows {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            display: block;
+            border: 3px solid #C0C0C0;
+            box-sizing: border-box;
+            top: 30px;
+            left: 46px;
+            background: #7A7878;
+        }
+
+        .car-windows li {
+            width: 35px;
+            height: 50px;
+            display: block;
+            float: left;
+            border-left: 3px solid #C0C0C0;
+        }
+
+        .car-windows li:first-child {
+            border-left: none;
+        }
+
+        .car-f-glass {
+            position: absolute;
+            height: 94px;
+            background: rgba(77, 77, 77, 0.56) none repeat scroll 0% 0%;
+            width: 4px;
+            display: block;
+            left: 0px;
+            top: 12px;
+            border-radius: 0px 2px 2px 0;
+        }
+
+        .car-b-glass {
+            position: absolute;
+            height: 94px;
+            background: #7A7878;
+            width: 4px;
+            display: block;
+            right: 0px;
+            top: 15px;
+        }
+        
+        .car-windows:after {
+            height: 6px;
+            top: 67px;
+            left: -3px;
+            position: absolute;
+            content: "";
+            display: block;
+            background: #C0C0C0;
+            width: 337px;
+        }
+
+        @keyframes run {
+            0%{
+                transform: translateX(150px);
+            }
+            100%{
+                transform: translateX(0px);
+            }
+        }
+.text-bus {
+  color: #000;
+  font-size: 20px;
+  font-weight: 600;
+  position: absolute;
+  top:110px;
+  left: 130px
+}
+
+h2 {
+  display: inline-block;
+  color: white;
+  font-family: 'Righteous', serif;
+  font-size: 1.5em;
+  text-shadow: .03em .03em 0 hsla(100,40%,50%,1);
+  }
+  
+  h2:after {
+    content: attr(data-shadow);
+    position: absolute;
+    top: .06em; left: .06em;
+    z-index: -1;
+    text-shadow: none;
+    background-image:
+      linear-gradient(
+        90deg,
+        transparent 45%,
+        hsla(48,20%,90%,1) 45%,
+        hsla(48,20%,90%,1) 55%,
+        transparent 0
+        );
+    background-size: .05em .05em;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  
+    animation: shad-anim 16s linear infinite;
+    }
+
+@keyframes shad-anim {
+  0% {background-position: 100 0}
+  0% {background-position: 100% -100%}
+  }
+  h1
+  {
+ 
+  color: white;
+  font-family: 'Righteous', serif;
+
+  }
+  
+</style>
+
+
+
+
+
+</head>
+<body>
+
+<form action=signup.jsp method="Post" name="myform" onsubmit="return validateform()" class="div">
+<h1 >SignUp</h1>
+
+
+<label for username="user">Username</label>
+<input type = "text" name="user" id="user" required>
+
+<label for email="email">Email</label>
+<input type = "email" name="email" id="email" required>
+
+<label for password="pass">Password</label>
+<input type="password" id="pass" name="pass" required>
+
+<label for phone="phone">Phone</label>
+<input type ="number" id="phone" name="phone" required>
+
+<input type ="submit" value="Register">
+<br>
+<h2> If you are registered member please <a href="login.html">Log in Here</a></h2>
+
+<div class="car-body">
+        <div class="car-f-glass"></div>
+        <div class="car-b-glass"></div>
+
+        <div class="car-doors"> 
+        </div>
+        <ul class="car-windows">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <div class="text-bus">Chitkara University </div>
+        <div class="car-f-wheel"></div>
+        <div class="car-b-wheel"></div>
+    </div>
+</form>
+</body>
+</html>
